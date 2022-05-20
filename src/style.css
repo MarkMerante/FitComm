@@ -1,0 +1,183 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+:root {
+  --gradient: linear-gradient(
+    45deg,
+    #2EB62C,
+    #57C84D,
+    #83D475,
+    #ABE098,
+    #C5E8B7
+  );
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 10%;
+  border-radius: 50px;
+  background-image: var(--gradient);
+  background-size: 400%;
+  animation: bg-animation 10s infinite alternate;
+}
+
+@keyframes bg-animation{
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
+}
+
+li, a {
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+}
+
+.nav_links {
+  list-style: none;
+}
+
+.nav_links li {
+  display: inline-block;
+  padding: 0px 20px;
+}
+
+.hero {
+  display: flex;
+  margin: 2rem;
+}
+
+.fitness--header{
+  margin: 1.5rem;
+  font-size: 3rem;
+}
+
+.fitness--gif{
+  margin: 1.25rem;
+  border-radius: 15px;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cards-list {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 20px;
+  overflow-x: auto;
+}
+
+.card {
+  width: 400px;
+  font-size: 12px;
+  flex: 0 0 auto;         /* ADD */
+  display: flex;          /* ADD */
+  flex-direction: column; /* ADD */
+  position: relative;
+  margin: 1.25rem;
+}
+
+.card:hover, .nav_links li:hover {
+  transform: scale(1.2);
+}
+
+.card--image {
+  width: 100%;
+  border-radius: 9px;
+  margin-bottom: 9px;
+}
+
+/* ADD */
+.card--title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 1.25rem;
+
+}
+
+.toggle-button {
+  position: absolute;
+  top: .75rem;
+  right: 1rem;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+}
+
+.toggle-button .bar{
+  height: 3px;
+  width: 100%;
+  background-color: black;
+  border-radius: 10px;
+}
+
+.post-preview {
+  padding: 10px 16px;
+  margin: 20px 0;
+  border-bottom: 1px solid #fafafa;
+}
+.post-preview:hover {
+  box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
+}
+.post-preview h2 {
+  font-size: 20px;
+  color: black;
+  margin-bottom: 8px;
+}
+
+.create {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+.create label {
+  text-align: left;
+  display: block;
+}
+.create h2 {
+  font-size: 20px;
+  color: black;
+  margin-bottom: 30px;
+}
+.create input, .create textarea{
+  width: 100%;
+  padding: 6px 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  display: block;
+}
+.create button {
+  background: #2EB62C,;
+  color: black;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+@media (max-width: 800px) {
+  .hero {
+    display: inline-block;
+  }
+  .toggle-button {
+    display: flex;
+  }
+  .nav_links {
+    display: none;
+  }
+}
